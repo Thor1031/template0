@@ -1,0 +1,24 @@
+.inner {
+	margin: 0 auto;
+	padding: 0;
+	max-width: 100%;
+  width: $layout-width-inner;
+
+  // sp
+  @include mq($until: sp){
+    padding-right: $pd-sp;
+		padding-left: $pd-sp;
+  }
+  // tab
+  @include mq($until: sp){
+    padding-right: $pd-sp;
+		padding-left: $pd-sp;
+  }
+  @include mq($until: sp){
+    padding-right: $pd-sp;
+		padding-left: $pd-sp;
+  }
+
+  /
+
+}
