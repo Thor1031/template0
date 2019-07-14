@@ -17,7 +17,7 @@ package-lock.json
 
 
 # img
-# img/.gitkeep
+img/.gitkeep
 img/base/
 
 .history/
