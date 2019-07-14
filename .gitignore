@@ -4,6 +4,7 @@
 # vscode
 .vscode/*
 
+
 # Sass
 .sass-cache/
 *.css.map
@@ -14,8 +15,10 @@
 node_modules/
 package-lock.json
 
-# img
+
+# img 
 img/.gitkeep
 img/base/
 
-.history/*
+.history/
+
