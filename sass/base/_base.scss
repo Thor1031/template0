@@ -3,14 +3,12 @@
 *::after {
 	box-sizing: border-box;
 }
-//layout
 
 html,
 body {
 	margin: 0;
 	padding: 0;
 }
-//layout
 
 body {
 	font-family: $ff-base;
@@ -23,7 +21,6 @@ body {
 	background: $cr-bg;
 	overflow-x: hidden;
 }
-// typo
 
 article,
 aside,
@@ -34,7 +31,6 @@ section,
 main {
 	display: block;
 }
-// layout
 
 h1,
 h2,
@@ -103,13 +99,11 @@ td {
 	padding: 0;
 	border: 0;
 }
-// layout
 
 a {
 	color: inherit;
 	outline: none;
 }
-// typo
 
 img {
 	max-width: 100%;
@@ -117,13 +111,11 @@ img {
 	border: none;
 	vertical-align: top;
 }
-// media
 
 video {
 	max-width: 100%;
 	height: auto;
 }
-//media
 
 code,
 kbd,
@@ -132,13 +124,11 @@ samp {
 	font-family: monospace, sans-serif;
 	font-size: inherit;
 }
-// typo
 
 ul,
 ol {
 	list-style: none;
 }
-// list
 
 table {
 	border-collapse: collapse;
@@ -147,7 +137,6 @@ table {
 	table-layout: fixed;
 	border: 1px solid $cr-table;
 }
-// table
 
 th,
 td {
@@ -161,7 +150,6 @@ blockquote,
 q {
 	quotes: none;
 }
-// typo
 
 blockquote::after,
 blockquote::before,
@@ -170,17 +158,15 @@ q::before {
 	content: "";
 	content: none;
 }
-// typo
 
 address {
 	font-style: normal;
 }
-// typo
 
 form {
 	margin: 0;
 	padding: 0;
-
+	
 	button {
 		width: auto;
 		display: inline-block;
@@ -195,7 +181,6 @@ form {
 		font-size: 16px;
 		cursor: pointer;
 		-webkit-appearance: none;
-		box-shadow: 0.0625em 0.0625em 0.1875em 0 rgba(0, 0, 0, 0.16);
 		transition: all 0.3s ease 0s;
 
 		&:hover,
@@ -213,7 +198,6 @@ form {
 		}
 	}
 }
-
 
 input,
 textarea {
@@ -245,7 +229,6 @@ textarea {
 		border: none;
 	}
 }
-// forms
 
 input {
 
@@ -270,7 +253,6 @@ input {
 		font-size: 16px;
 		cursor: pointer;
 		-webkit-appearance: none;
-		box-shadow: 0.0625em 0.0625em 0.1875em 0 rgba(0, 0, 0, 0.16);
 		transition: all 0.3s ease 0s;
 
 		&:hover,
@@ -386,7 +368,6 @@ input {
 		}
 	}
 }
-//form
 
 select {
 	padding: 0.4em 2.4em 0.4em 0.8em;
@@ -413,5 +394,3 @@ select {
 		border-color: $cr-form-bd_avtive;
 	}
 }
-
-//form
