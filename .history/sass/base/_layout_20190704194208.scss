@@ -1,0 +1,11 @@
+html {
+  background-color: $viewport-background-color;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+	font-weight: $fw-base;
