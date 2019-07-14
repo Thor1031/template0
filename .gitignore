@@ -1,7 +1,23 @@
-.vscode/
-.history/
+# General
+.DS_Store
+
+# vscode
+.vscode/*
+
+
+# Sass
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
+
+# node
 node_modules/
 package-lock.json
-img/.gitkeep
+
+
+# img
+# img/.gitkeep
 img/base/
-css/style.css.map
+
+.history/
