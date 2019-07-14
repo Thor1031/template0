@@ -2,7 +2,7 @@
 .DS_Store
 
 # vscode
-.vscode/
+.vscode/*
 
 # Sass
 .sass-cache/
@@ -18,4 +18,4 @@ package-lock.json
 img/.gitkeep
 img/base/
 
-.history/
+.history/*
