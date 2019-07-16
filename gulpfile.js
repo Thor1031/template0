@@ -34,7 +34,7 @@ var imageminOption = [
   imagemin.svgo() // svg画像　圧縮
 ];
 
-// sass-to-css 変換・出力処理
+// gulp-sass sassコンパイルタスク
 gulp.task( 'sass', function() {
   return gulp
     .src('./sass/**/*.scss')
@@ -53,46 +53,40 @@ gulp.task( 'sass', function() {
     .pipe(gulp.dest('./css'));
 });
 
-// ファイル変更のたびに、タスクを実行してくれる
-gulp.task('watch', function() {
-  // 変更を監視するファイルのパスと、ファイルへ実行するタスク（ここではsass, ejsの変換）
-
-  // gulp v3
-  // gulp.watch('./ejs/**/*.ejs', ['ejs']);
-  // gulp.watch('./sass/**/*.scss', ['sass']);
-
-  // gulp v4
-  gulp.watch('./ejs/**/*.ejs', gulp.task('ejs'));
-  gulp.watch('./sass/**/*.scss', gulp.task('sass'));
-});
-
-// ファイル保存時のブラウザ自動更新
-gulp.task('browser-sync', function() {
+// Browser sync
+// サーバーの立ち上げ
+gulp.task('build-server', function (done) {
   browserSync.init({
     server: {
-      baseDir: './',
+      baseDir: "./",
       index: 'index.html'
     }
   });
+  done();
 });
 
-gulp.task('bs-reload', function() {
+//　監視ファイル
+gulp.task('watch-files', function (done) {
+  gulp.watch('./ejs/**/*.ejs', gulp.task('ejs'));
+  gulp.watch('./sass/**/*.scss', gulp.task('sass'));
+  gulp.watch("./*.html", gulp.task('browser-reload'));
+  gulp.watch("./css/*.css", gulp.task('browser-reload'));
+  gulp.watch("./js/*.js", gulp.task('browser-reload'));
+  done();
+});
+
+// ブラウザのリロード
+gulp.task('browser-reload', function (done) {
   browserSync.reload();
+  done();
+  console.log('Browser reload completed');
 });
 
-// gulp v3
-// gulp.task('default', ['browser-sync', 'watch'], function() {
-//   gulp.watch('./*.html', ['bs-reload']);
-//   gulp.watch('./css/*.css', ['bs-reload']);
-//   gulp.watch('./js/*.js', ['bs-reload']);
-// });
-
-// gulp v4
-gulp.task('default', gulp.series(gulp.parallel('browser-sync', 'watch'), function() {
-  gulp.watch('./*.html', ['bs-reload']);
-  gulp.watch('./css/*.css', ['bs-reload']);
-  gulp.watch('./js/*.js', ['bs-reload']);
+// タスクの実行
+gulp.task('default', gulp.series('build-server', 'watch-files', function (done) {
+  done();
 }));
+
 
 // imagemin 画像圧縮処理
 gulp.task('imagemin', function() {
