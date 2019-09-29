@@ -23,32 +23,25 @@ var imageminOption = [
   imageminPngquant({ quality: '65-80' }),
   imageminMozjpeg({ quality: 85 }),
 
-  // gif画像　圧縮
-  imagemin.gifsicle({
+  imagemin.gifsicle({ // gif　圧縮
     interlaced: false,
     optimizationLevel: 1,
     colors: 256
   }),
-  imagemin.jpegtran(), // jpeg画像　圧縮
-  imagemin.optipng(), // png画像　圧縮
-  imagemin.svgo() // svg画像　圧縮
+  imagemin.jpegtran(), // jpeg　圧縮
+  imagemin.optipng(), // png　圧縮
+  imagemin.svgo() // svg　圧縮
 ];
 
-// gulp-sass sassコンパイルタスク
+// sassコンパイルタスク
 gulp.task( 'sass', function() {
   return gulp
-    .src('./sass/**/*.scss')
-    // watchをエラーで中断させないようにする
-    .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
-    // import時に setting/** のような記述ができる
-    .pipe(sassGlob())
-    // css変換処理と、出力フォーマット形式の指定
-    .pipe(sass({ outputStyle: 'expanded' }))
-    // ベンダープレフィックスを自動で付与してくれる
-    .pipe(postcss([autoprefixer()]))
-    // プロパティをソートし直してくれる, ここではアルファベット順
-    .pipe(postcss([cssdeclsort({ order: 'alphabetically' })]))
-    // バラバラに記載されているメディアクエリを1つにまとめてくれる
+    .src('./sass/**/*.scss') // watchをエラーで中断させないようにする
+    .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') })) // import時に setting/** のような記述ができる
+    .pipe(sassGlob()) // css変換処理と、出力フォーマット形式の指定
+    .pipe(sass({ outputStyle: 'expanded' })) // ベンダープレフィックスを自動で付与してくれる
+    .pipe(postcss([autoprefixer()])) // プロパティをソートし直してくれる, ここではアルファベット順
+    .pipe(postcss([cssdeclsort({ order: 'alphabetically' })])) // バラバラに記載されているメディアクエリを1つにまとめてくれる
     .pipe(mmq())
     .pipe(gulp.dest('./css'));
 });
@@ -65,9 +58,9 @@ gulp.task('build-server', function (done) {
   done();
 });
 
-//　監視ファイル
+//　監視ファイルを指定
 gulp.task('watch-files', function (done) {
-  gulp.watch('./ejs/**/*.ejs', gulp.task('ejs'));
+  // gulp.watch('./ejs/**/*.ejs', gulp.task('ejs'));
   gulp.watch('./sass/**/*.scss', gulp.task('sass'));
   gulp.watch("./*.html", gulp.task('browser-reload'));
   gulp.watch("./css/*.css", gulp.task('browser-reload'));
@@ -92,7 +85,6 @@ gulp.task('default', gulp.series('build-server', 'watch-files', function (done) 
 gulp.task('imagemin', function() {
   return gulp
     .src('./img/**/*') // タスクの対象となるファイル
-    // 実行する処理をpipeで繋いでいく
     .pipe(imagemin(imageminOption))
     .pipe(gulp.dest('./img')); // 出力先
 });
@@ -100,14 +92,10 @@ gulp.task('imagemin', function() {
 
 gulp.task('ejs', function() {
   return gulp
-    // ! は参照を除外するファイル
-    .src(['ejs/**/*.ejs', '!ejs/**/_*.ejs'])
-    //ejsを使う
-    .pipe(ejs())
+    .src(['ejs/**/*.ejs', '!ejs/**/_*.ejs']) // ! は参照を除外するファイル
+    .pipe(ejs()) //ejsを使う
     // .pipe(ejs({}, {}, { ext: '.html' }))
-    // 通常はejsで出力されるところを、htmlで出力
-    .pipe(rename({ extname: '.html' }))
-    // <!DOCTYPEまでの空白を全部取り除く
-    .pipe(replace(/[\s\S]*?(<!DOCTYPE)/, '$1'))
+    .pipe(rename({ extname: '.html' })) // 通常はejsで出力されるところを、htmlで出力
+    .pipe(replace(/[\s\S]*?(<!DOCTYPE)/, '$1')) // <!DOCTYPEまでの空白を全部取り除く
     .pipe(gulp.dest('./'));
 });
