@@ -20,12 +20,13 @@
 	margin-right: auto;
 
 	a {
-		transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
+	display: block;
 
-		&:hover {
-			opacity: $opacity;
-		}
+	&:hover {
+		opacity: $opacity;
 	}
+
 
 	img {
 		width: 200px;
