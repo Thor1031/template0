@@ -13,8 +13,11 @@
 		padding-top: 0;
 		padding-bottom: 0;
 		height: $header-height;
+		min-width: $layout-width-header-inner;
 	}
-}
+	@include mq("tab-head") {
+		display: none;
+	}
 
 .header-logo {
 	margin-right: auto;
