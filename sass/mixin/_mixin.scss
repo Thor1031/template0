@@ -28,3 +28,10 @@
 
 	@return $size / $size2;
 }
+
+// fontawesome 適用　
+@mixin f-awesome($content) {
+	content: $content;
+	font-family: $ff-awesome;
+	font-weight: 900;
+}

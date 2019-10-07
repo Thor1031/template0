@@ -1,4 +1,3 @@
-// パッケージの読み込み
 var gulp = require( 'gulp' );
 var sass = require( 'gulp-sass' );
 var plumber = require( 'gulp-plumber' );
