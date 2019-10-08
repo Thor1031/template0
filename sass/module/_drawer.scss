@@ -17,9 +17,14 @@ $bar-color: #fff;
 	display: none;
 	right: 0;
 
-	@include mq("sp") {
+
+	@include mq("tab-head") {
 		display: block;
 	}
+
+	// @include mq("sp") {
+	// 	display: block;
+	// }
 }
 
 #drawer-check {
