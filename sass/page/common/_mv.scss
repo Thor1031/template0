@@ -1,4 +1,31 @@
-#mv {
+.mv {
 	> .inner {
+
+		@include mq("tab") {
+			// max-width: $layout-width-inner - 300px;
+		}
+
+		@include mq("tab-sm") {
+			// padding: 0;
+			// max-width: 100%;
+		}
+	}
+}
+
+.slider-img {
+	width: 100%;
+}
+
+.slider-img.pc {
+	@include mq("sp") {
+		display: none;
+	}
+}
+
+.slider-img.sp {
+	display: none;
+
+	@include mq("sp") {
+		display: block;
 	}
 }

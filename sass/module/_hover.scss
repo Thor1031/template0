@@ -1,0 +1,19 @@
+@keyframes hvr-bob-float {
+  100% { -webkit-transform: translateY(-8px); transform: translateY(-8px);}
+}
+
+@keyframes hvr-bob {
+  0% { -webkit-transform: translateY(-8px); transform: translateY(-8px);}
+  50% { -webkit-transform: translateY(-4px); transform: translateY(-4px);}
+  100% { -webkit-transform: translateY(-8px); transform: translateY(-8px);}
+}
+
+.hvr-bob:hover, .hvr-bob:focus, .hvr-bob:active {
+  animation-name: hvr-bob-float, hvr-bob;
+  animation-duration: .3s, 1.5s;
+  animation-timing-function: ease-out, ease-in-out;
+  animation-delay: 0s, .3s;
+  animation-iteration-count: 1, infinite;
+  animation-direction: normal, alternate;
+  animation-fill-mode: forwards;
+}

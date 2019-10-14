@@ -35,3 +35,15 @@
 	font-family: $ff-awesome;
 	font-weight: 900;
 }
+
+@mixin flex-container($jc: space-around, $col-bp: null) {
+	display: flex;
+	justify-content: $jc;
+	align-items: center;
+
+	@if $col-bp != null {
+		@include mq($col-bp) {
+		  flex-direction: column;
+		}
+	}
+}

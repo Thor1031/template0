@@ -6,6 +6,8 @@
 <meta name="format-detection" content="telephone=no">
 <link rel="stylesheet" href="./css/style.css">
 <link href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1/slick/slick.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1/slick/slick-theme.min.css">
 <title>タイトル</title>
 <meta name="description" content="ディスクリプション">
 <!-- <link rel="icon" href="./img/favicon.ico"> -->
@@ -13,12 +15,11 @@
 <body>
 
 
-<!-- header -->
-<header>
+<header class="g-header">
 	<div class="inner">
 
 		<!-- header-logo -->
-		<a class="header-logo" href=""><img src="./img/header-logo.png" alt="ロゴ">
+		<a class="header-logo" href="#"><img src="./img/header-logo.png" alt="ロゴ">
 		</a>
 
 		<!-- header-nav -->
@@ -36,13 +37,15 @@
 </header><!-- /header -->
 
 
-<!-- drawer -->
 <div class="drawer">
-	<div class="drawer-open"><span></span></div>
+	<button class="drawer-toggler" type="button" aria-expanded="false" aria-controls="GDrawerCont"
+	aria-label="Global navigation toggle button">
+		<span></span>
+	</button>
 	<div class="drawer-close"></div>
 
 	<!-- drawer-contents -->
-	<div class="drawer-contents">
+	<div class="drawer-contents" id="GDrawerCont">
 		<nav class="drawer-nav">
 			<ul class="drawer-list">
 				<li><a href="#">MENU1</a></li>
@@ -57,20 +60,51 @@
 </div><!-- /drawer -->
 
 
-<!-- mv -->
-<div id="mv">
+<div class="mv">
 	<div class="inner">
+
+		<div class="mv-slider">
+			<a href="#">
+				<img class="slider-img pc" src="./img/slider-item01" alt="slide01">
+				<img class="slider-img sp" src="./img/slider-item01-sp" alt="slide01-sp">
+			</a>
+			<a href="#">
+				<img class="slider-img pc" src="./img/slider-item02" alt="slide02">
+				<img class="slider-img sp" src="./img/slider-item02-sp" alt="slide02-sp">
+			</a>
+		</div><!-- /mv-slider-->
 
 	</div><!-- /inner -->
 </div><!-- /mv -->
 
+<!-- <div class="dropdown">
+	<p class="dropdown-ttl">MENU1</p>
+	<ul class="dropdown-list">
+		<li><a href="">Child1</a></li>
+		<li><a href="">Child2</a></li>
+		<li><a href="">Child3</a></li>
+	</ul>
+</div> -->
+<!-- /dropdown -->
 
-<!-- contents -->
+<!-- <div class="float">
+	<a href="#"></a>
+
+	<button class="toTop" type="button" aria-label="Back to top"></button>
+</div> -->
+<!-- /float -->
+
+
 <div id="contents">
   <div class="inner">
 
     <!-- primary -->
     <main>
+			<section>
+				<div class="inner">
+					<h2 class="ttl"></h2>
+
+			</section>
     </main><!-- primary -->
 
     <!-- secondary -->
@@ -81,21 +115,49 @@
   </div><!-- /inner -->
 </div><!-- /contents -->
 
-<!-- footer -->
-<footer id="footer">
-	<div class="inner">
-		<aside class="footer-contents"></aside>
+<footer class="g-footer">
+		<aside class="g-footer-contents">
+			<div class="f-menu inner">
+				<dl class="f-menu01">
+					<dt>
+					</dt>
+					<div class="f-grid-bx">
+						<dd></dd>
+						<dd></dd>
+						<dd></dd>
+					</div>
+				</dl>
 
-		<div class="footer-bottom">
-			<!-- copy -->
-			<p class="copy"><small>&copy;</small></p>
+			</div>
+		</aside>
+
+		<div class="g-footer-bottom">
+			<div class="inner">
+				<!-- <div><img src="./img/f-logo.png" alt=""></div> -->
+				<p class="copy"><small>&copy;</small></p>
+				<!-- /copy -->
+			</div>
 		</div>
-
-	</div><!-- /inner -->
 </footer><!-- /footer -->
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1/slick/slick.min.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+		$(".mv-slider").slick({
+			dots: true,
+			infinite: true,
+			speed: 300,
+			slidesToShow: 1,
+			adaptiveHeight: true,
+			autoplay: true,
+			autoplaySpeed: 3000,
+			arrows: false,
+		});
+	});
+</script>
 <script src="./js/script.js"></script>
 
 </body>
