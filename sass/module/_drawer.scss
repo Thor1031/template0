@@ -1,5 +1,8 @@
 // ドロワーアイコン
+$drawer-max-width: 90%;
 $drawer-width: 250px;
+$drawer-height: 100%;
+$drawer-bc: #fff;
 $drawer-speed: 0.5s;
 $drawer-icon-width: 60px;
 $drawer-icon-height: 60px;
@@ -9,6 +12,12 @@ $bar-radius: 3px;
 $bar-space: 4px;
 $bar-bg: $cr-m;
 $bar-color: #fff;
+
+$drawer-ttl-fsize: 1em;
+$nav-fsize: 16px;
+$nav-span-fsize: 14px;
+$nav-a-pd: 16px;
+$nav-bt-c: #ddd;
 
 .drawer {
 	position: fixed;
@@ -31,7 +40,7 @@ $bar-color: #fff;
 	display: none;
 }
 
-.drawer-open {
+.drawer-toggler {
 	display: inline-block;
 	width: $drawer-icon-width;
 	height: $drawer-icon-height;
@@ -137,16 +146,16 @@ $bar-color: #fff;
 	right: 0;
 	z-index: map-get($layer, "drawer");
 	width: $drawer-width;
-	max-width: 90%;
-	height: 100%;
-	background: #fff;
+	max-width: $drawer-max-width;
+	height: $drawer-height;
+	background: $drawer-bc;
 	transition: $drawer-speed ease-in-out;
 	padding-top: $header-height-sp;
 	transform: translateX(105%);
 	text-align: left;
 
-	.drawer-title {
-		font-size: 1em;
+	.drawer-ttl {
+		font-size: $drawer-ttl-fsize;
 		font-weight: 700;
 		text-align: center;
 		padding: 0 34px;
@@ -161,17 +170,21 @@ $bar-color: #fff;
 .drawer-nav {
 
 	li {
+		// border-top: 1px solid $nav-bt-c;
+		// &:last-of-type {
+		// 	border-bottom: 1px solid $nav-bt-c;
+		// }
 
 		a {
 			text-decoration: none;
 			color: $cr-txt;
 			display: block;
-			padding: 16px;
-			font-size: 16px;
+			padding: $nav-a-pd;
+			font-size: $nav-fsize;
 			border-left: 6px solid transparent;
 
 			span {
-				font-size: 14px;
+				font-size: $nav-span-fsize;
 				color: $cr-m;
 				margin-left: 12px;
 			}

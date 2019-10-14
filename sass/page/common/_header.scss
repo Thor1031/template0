@@ -1,43 +1,52 @@
-#header {
+
+$cr-header-bg_wh: #fff;
+$cr-header-bg_dr: #3e3d3d;
+$logo-width: 200px;
+
+.g-header {
 	position: fixed;
 	width: 100%;
-	background: #fff;
+	background: $cr-header-bg_wh;
 	top: 0;
 	left: 0;
 	box-shadow: 0 1px 3px rgba(#000, 0.16);
 	z-index: map-get($layer, "header");
 
+	.inner {
+		@include flex-container(space-around);
+		padding: 0 16px;
+	}
+
 	> .inner {
-		display: flex;
-		align-items: center;
-		padding-top: 0;
-		padding-bottom: 0;
+		justify-content: flex-start;
 		height: $header-height;
 		min-width: $layout-width-header-inner;
 	}
+
 	@include mq("tab-head") {
 		display: none;
 	}
+}
 
 .header-logo {
 	margin-right: auto;
 
 	a {
-	transition: all 0.3s ease 0s;
-	display: block;
+		transition: all 0.3s ease 0s;
+		display: block;
 
-	&:hover {
-		opacity: $opacity;
+		&:hover {
+			opacity: $opacity;
+		}
+
+		img {
+			width: $logo-width;
+		}
 	}
-
-
-	img {
-		width: 200px;
-	}
-}
 }
 
 .header-nav {
+	width: 80%;
 
 	@include mq("sp") {
 		display: none;
@@ -45,6 +54,7 @@
 
 	ul {
 		font-size: 0;
+		@include flex-container();
 	}
 
 	li {
@@ -61,6 +71,7 @@
 			display: block;
 			font-size: 16px;
 			transition: all 0.3s ease 0s;
+			padding: .5rem;
 
 			&:hover {
 				opacity: $opacity;
