@@ -18,5 +18,5 @@ jQuery("button.toTop").on("click", function () {
 })
 
 jQuery(".dropdown-ttl").on("click", function () {
-  jQuery("dropdown-list").toggleClass("expanded");
+  jQuery(".dropdown-list").toggleClass("expanded");
 })
