@@ -1,14 +1,24 @@
 $float-bc: #ececec;
+$fz-float-arrow: 30px;
 
 .float {
   position: fixed;
   bottom: 1rem;
   right: 30px;
-  z-index: map-get($map: $layer, $key: "float");
+  z-index: map-get($layer, "float");
   background-color: $float-bc;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+
+  &.reveal {
+    opacity: 1;
+  }
+
+  @include mq('sp') {
+    right: 10px;
+  }
 
   a {
-
   }
 }
 
@@ -17,4 +27,13 @@ button.toTop {
   padding-right: 0;
   padding-left: 0;
 
+  i.fa-chevron-up {
+    font-size: $fz-float-arrow;
+    padding: 20px;
+
+    @include mq('sp') {
+      font-size: $fz-float-arrow / 2;
+      padding: 15px;
+    }
+  }
 }

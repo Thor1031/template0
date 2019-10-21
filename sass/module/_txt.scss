@@ -41,7 +41,46 @@
   }
 }
 
-.txtl {
+%txtm-base {
+  font: {
+    size: 20px;
+    weight: 600;
+  }
+
+  @include mq('tab') {
+    font: {
+      size: 16px;
+      weight: 600;
+    }
+  }
+  @include mq('sp') {
+    font: {
+      size: 15px;
+      weight: 600;
+    }
+  }
+}
+
+.txtm {
+  @extend %txtm-base;
+}
+
+.ttlm {
+  @extend %txtm-base;
+  margin: {
+    top: 12px;
+    bottom: 10px;
+  }
+
+  @include mq('sp') {
+    margin: {
+      top: 10px;
+      bottom: 8px;
+    }
+  }
+}
+
+%txtl-base {
   font: {
     size: 28px;
     weight: 600;
@@ -60,4 +99,22 @@
       weight: 600;
     }
   }
+}
+
+.txtl {
+  @extend %txtl-base;
+}
+
+.ttll {
+  @extend %txtl-base;
+  margin-bottom: 48px;
+
+  @include mq('sp') {
+    margin-bottom: 40px;
+  }
+}
+
+// spanのclassとして使う
+.underline {
+  background: linear-gradient(transparent 70%, #ebb94d 70%);
 }

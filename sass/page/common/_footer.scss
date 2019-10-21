@@ -14,10 +14,12 @@ $footer-btm-pd: 32px;
 .gfooter-contents {
 	background-color: $footer-cnt-bc;
 	color: $footer-cnt-c;
+	@include basebox(
+		$pt: $footer-cnt-pd,
+		$pb: $footer-cnt-pd
+	);
 
 	> .inner {
-		// padding-top: $footer-cnt-pd;
-		// padding-bottom: $footer-cnt-pd;
 	}
 
 	a {
@@ -46,21 +48,18 @@ $footer-btm-pd: 32px;
 .gfooter-bottom {
 	background-color: $footer-btm-bc;
 	color: $footer-btm-c;
-	font-size: 16px;
-	letter-spacing: 1.5px;
-	font-weight: normal;
-	line-height: initial;
 
+	@include basebox(
+		$pt: $footer-btm-pd,
+		$pb: $footer-btm-pd
+	);
 
 	> .inner {
-		padding-top: $footer-btm-pd;
-		padding-bottom: $footer-btm-pd;
 		@include flex-container(space-around);
 	}
 
 	p.copy {
 		color: $copy-c;
-
 
 		small {
 			font-size: inherit;
