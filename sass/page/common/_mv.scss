@@ -1,5 +1,21 @@
+$height-mv: 500px;
+
 .mv {
+	// background-image: url(../.././../img/main.jpg);
+	// background-size: cover;
+	// background-repeat: no-repeat;
+	// background-position: center;
+	@include basebox;
+	margin-top: $header-height;
+	height: $height-mv;
+
+	@include mq('sp') {
+		margin-top: $header-height-sp;
+		height: $height-mv * 0.8;
+	}
+
 	> .inner {
+		text-align: center;
 
 		@include mq("tab") {
 			// max-width: $layout-width-inner - 300px;
@@ -10,6 +26,10 @@
 			// max-width: 100%;
 		}
 	}
+}
+
+.catchcopy {
+
 }
 
 .slider-img {

@@ -706,10 +706,16 @@ button.toTop {
 .txtxs {
 	font-size: 14px;
 	font-weight: 300;
+	letter-spacing: 0;
 }
 
 .txts {
 	font-size: 16px;
+	font-weight: 600;
+}
+
+.txtl {
+	font-size: 28px;
 	font-weight: 600;
 }
 
@@ -844,6 +850,17 @@ button.header-btn {
 	padding: 11px 40px;
 }
 
+.mv {
+	height: 500px;
+	margin-top: 80px;
+	padding-bottom: 50px;
+	padding-top: 50px;
+}
+
+.mv > .inner {
+	text-align: center;
+}
+
 .slider-img {
 	width: 100%;
 }
@@ -879,6 +896,11 @@ button.header-btn {
 
 .txts {
 	font-size: 14px;
+	font-weight: 600;
+}
+
+.txtl {
+	font-size: 24px;
 	font-weight: 600;
 }
 
@@ -924,12 +946,22 @@ button.header-btn {
 	font-weight: 600;
 }
 
+.txtl {
+	font-size: 18px;
+	font-weight: 600;
+}
+
 .gheader {
 	height: 60px;
 }
 
 .header-nav {
 	display: none;
+}
+
+.mv {
+	height: 400px;
+	margin-top: 60px;
 }
 
 .slider-img.pc {
