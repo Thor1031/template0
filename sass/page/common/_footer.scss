@@ -3,6 +3,7 @@ $footer-cnt-bc: #4F4C4D;
 $footer-cnt-c: #fff;
 $footer-cnt-pd: 48px;
 $footer-btm-bc: #fff;
+$footer-btm-c: #fff;
 $copy-c: #969696;
 $footer-btm-pd: 32px;
 
@@ -44,6 +45,12 @@ $footer-btm-pd: 32px;
 
 .g-footer-bottom {
 	background-color: $footer-btm-bc;
+	color: $footer-btm-c;
+	font-size: 16px;
+	letter-spacing: 1.5px;
+	font-weight: normal;
+	line-height: initial;
+
 
 	> .inner {
 		padding-top: $footer-btm-pd;
@@ -51,7 +58,12 @@ $footer-btm-pd: 32px;
 		@include flex-container(space-around);
 	}
 
-	.copy {
+	p.copy {
 		color: $copy-c;
+
+
+		small {
+			font-size: inherit;
+		}
 	}
 }

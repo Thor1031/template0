@@ -1,7 +1,11 @@
+$float-bc: #ececec;
+
 .float {
   position: fixed;
   bottom: 1rem;
-  right: 0;
+  right: 30px;
+  z-index: map-get($map: $layer, $key: "float");
+  background-color: $float-bc;
 
   a {
 
@@ -9,5 +13,8 @@
 }
 
 button.toTop {
-  
+  border: none;
+  padding-right: 0;
+  padding-left: 0;
+
 }

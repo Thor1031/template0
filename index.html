@@ -15,14 +15,17 @@
 <body>
 
 
-<header class="g-header">
+<header class="gheader">
 	<div class="inner">
 
 		<!-- header-logo -->
-		<a class="header-logo" href="#"><img src="./img/header-logo.png" alt="ロゴ">
-		</a>
+		<h1 class="header-logo">
+			<a href="#">
+				<img src="./img/header-logo.png" alt="ロゴ">
+			</a>
+			<!-- <span></span> -->
+		</h1>
 
-		<!-- header-nav -->
 		<nav class="header-nav">
 			<ul class="header-list">
 				<li><a href="#">MENU1</a></li>
@@ -32,6 +35,10 @@
 				<li><a href="#">MENU5</a></li>
 			</ul>
 		</nav><!-- /header-nav -->
+
+		<button class="header-btn" type="button" aria-label="">
+			<p>Lorem ipsum dolor</p>
+		</button><!-- /header-btn -->
 
 	</div><!-- /inner -->
 </header><!-- /header -->
@@ -63,7 +70,7 @@
 <div class="mv">
 	<div class="inner">
 
-		<div class="mv-slider">
+		<div class="main-slider">
 			<a href="#">
 				<img class="slider-img pc" src="./img/slider-item01" alt="slide01">
 				<img class="slider-img sp" src="./img/slider-item01-sp" alt="slide01-sp">
@@ -98,16 +105,27 @@
 <div id="contents">
   <div class="inner">
 
-    <!-- primary -->
     <main>
-			<section>
+			<section class="">
 				<div class="inner">
 					<h2 class="ttl"></h2>
-
+					<p class="txt"></p>
+				</div>
+			</section>
+			<section class="">
+				<div class="inner">
+					<h2 class="ttl"></h2>
+					<p class="txt"></p>
+				</div>
+			</section>
+			<section class="">
+				<div class="inner">
+					<h2 class="ttl"></h2>
+					<p class="txt"></p>
+				</div>
 			</section>
     </main><!-- primary -->
 
-    <!-- secondary -->
 		<aside>
 		</aside><!-- /secondary -->
 
@@ -115,8 +133,8 @@
   </div><!-- /inner -->
 </div><!-- /contents -->
 
-<footer class="g-footer">
-		<aside class="g-footer-contents">
+<footer class="gfooter">
+		<aside class="gfooter-contents">
 			<div class="f-menu inner">
 				<dl class="f-menu01">
 					<dt>
@@ -131,7 +149,7 @@
 			</div>
 		</aside>
 
-		<div class="g-footer-bottom">
+		<div class="gfooter-bottom">
 			<div class="inner">
 				<!-- <div><img src="./img/f-logo.png" alt=""></div> -->
 				<p class="copy"><small>&copy;</small></p>
@@ -142,6 +160,8 @@
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1/slick/slick.min.js"></script>
 
 <script type="text/javascript">
