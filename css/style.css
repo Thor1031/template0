@@ -612,6 +612,38 @@ button.toTop i.fa-chevron-up {
 	padding: 20px;
 }
 
+.form-outer {
+	margin-bottom: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+}
+
+.form-outer input,
+.form-outer textarea {
+	border: none;
+	border-radius: 8px;
+	padding: 10px;
+}
+
+.form-outer input {
+	height: 55px;
+}
+
+.form-outer textarea {
+	height: 100px;
+}
+
+.submit-btn {
+	background-color: #da6b64;
+	border-radius: 50px;
+	font-size: 23px;
+	font-weight: bold;
+	height: 55px;
+	letter-spacing: 10px;
+	width: 100%;
+}
+
 .hvr-bob:hover,
 .hvr-bob:focus,
 .hvr-bob:active {
@@ -932,6 +964,10 @@ button.header-btn {
 button.toTop i.fa-chevron-up {
 	font-size: 15px;
 	padding: 15px;
+}
+
+.form-outer {
+	width: 100%;
 }
 
 .brsp {

@@ -85,7 +85,7 @@
 </div><!-- /mv -->
 
 
-<div class="drop inner"> <!-- 実際に使う際はinnerを決して-->
+<div class="drop inner"> <!-- 実際に使う際はinnerを消して-->
 	<p class="drop-ttl">MENU1</p>
 	<ul class="drop-conts">
 		<li><a href="">Child1</a></li>
@@ -102,6 +102,14 @@
 		<i class="fas fa-chevron-up arrow"></i>
 	</button>
 </div><!-- /float -->
+
+<form action="/" method="post" class="inner"> <!-- 実際に使う際はinnerを消して-->
+	<div class="form-outer"><input type="text" name="user_last_name" placeholder="姓"></div>
+	<div class="form-outer"><input type="text" name="user_first_name" placeholder="名"></div>
+	<div class="form-outer"><input type="email" name="user_email" placeholder="メールアドレス"></div>
+	<div class="form-outer"><textarea name="user_message" placeholder="質問などはこちら（空欄でもOK）"></textarea></div>
+	<div class="form-outer"><button type="submit" class="submit-btn">送信</button></div>
+</form>
 
 
 <div id="contents">
