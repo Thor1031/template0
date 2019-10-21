@@ -1,0 +1,29 @@
+.txtxs {
+  font-size: 14px;
+  font-weight: 300;
+
+  @include mq('tab') {
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0;
+  }
+  @include mq('sp') {
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0;
+  }
+}
+
+.txts {
+  font-size: 16px;
+  font-weight: 600;
+
+  @include mq('tab') {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  @include mq('sp') {
+    font-size: 12px;
+    font-weight: 600;
+  }
+}
