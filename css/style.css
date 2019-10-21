@@ -407,30 +407,6 @@ select:focus {
 	width: 820px;
 }
 
-.brsp {
-	display: none;
-}
-
-.ttl {
-	font-size: 28px;
-	font-weight: 600;
-	letter-spacing: 1.5px;
-	line-height: 40px;
-}
-
-.small-ttl {
-	font-size: 1.2rem;
-	font-weight: bold;
-	padding-top: 48px;
-	text-align: center;
-}
-
-.txt {
-	font-size: 20px;
-	letter-spacing: 1.5px;
-	margin-bottom: 1rem;
-}
-
 .drawer {
 	display: none;
 	position: fixed;
@@ -618,6 +594,7 @@ select:focus {
 	position: fixed;
 	right: 30px;
 	transition: opacity 0.3s ease-in-out;
+	z-index: 99;
 }
 
 .float.reveal {
@@ -698,6 +675,10 @@ button.toTop i.fa-chevron-up {
 #modal-checkbox:checked ~ .modal-close {
 	display: block;
 	opacity: 0.6;
+}
+
+.brsp {
+	display: none;
 }
 
 .txtxs {
@@ -944,19 +925,6 @@ button.header-btn {
 	padding-right: 16px;
 }
 
-.brsp {
-	display: block;
-}
-
-.ttl {
-	font-size: 18px !important;
-}
-
-.txt {
-	font-size: 15px !important;
-	letter-spacing: normal;
-}
-
 .float {
 	right: 10px;
 }
@@ -964,6 +932,10 @@ button.header-btn {
 button.toTop i.fa-chevron-up {
 	font-size: 15px;
 	padding: 15px;
+}
+
+.brsp {
+	display: block;
 }
 
 .txtxs {
