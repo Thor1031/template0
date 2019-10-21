@@ -1,24 +1,21 @@
 
-$cr-header-bg_wh: #fff;
-$cr-header-bg_dr: #3e3d3d;
-$logo-width: 200px;
+$bc-header: #fff;
+$bc-header-btn: #da6b64;
+$width-logo: 200px;
+$width-nav: 70%;
 
-.g-header {
+.gheader {
 	position: fixed;
 	width: 100%;
-	background: $cr-header-bg_wh;
+	background: $bc-header;
 	top: 0;
 	left: 0;
 	box-shadow: 0 1px 3px rgba(#000, 0.16);
 	z-index: map-get($layer, "header");
 
-	.inner {
-		@include flex-container(space-around);
-		padding: 0 16px;
-	}
-
 	> .inner {
-		justify-content: flex-start;
+		@include flex-container(flex-start);
+		padding: 0 16px;
 		height: $header-height;
 		min-width: $layout-width-header-inner;
 	}
@@ -26,27 +23,37 @@ $logo-width: 200px;
 	@include mq("tab-head") {
 		display: none;
 	}
+
+	@include mq('sp') {
+		height: $header-height-sp;
+	}
 }
 
 .header-logo {
 	margin-right: auto;
+	margin-bottom: 0;
+	text-decoration: none;
 
 	a {
 		transition: all 0.3s ease 0s;
-		display: block;
+		display: inline-block;
 
 		&:hover {
 			opacity: $opacity;
 		}
 
 		img {
-			width: $logo-width;
+			width: $width-logo;
 		}
+	}
+
+	.subttl {
 	}
 }
 
 .header-nav {
-	width: 80%;
+	width: $width-nav;
+	margin-right: 20px;
 
 	@include mq("sp") {
 		display: none;
@@ -54,11 +61,10 @@ $logo-width: 200px;
 
 	ul {
 		font-size: 0;
-		@include flex-container();
+		@include flex-container(space-evenly);
 	}
 
 	li {
-		display: inline-block;
 		margin-right: 16px;
 
 		&:last-child {
@@ -78,4 +84,11 @@ $logo-width: 200px;
 			}
 		}
 	}
+}
+
+button.header-btn {
+	padding: 11px 40px;
+	background-color: $bc-header-btn;
+	color: #fff;
+	border: none;
 }

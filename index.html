@@ -18,13 +18,12 @@
 <header class="gheader">
 	<div class="inner">
 
-		<!-- header-logo -->
 		<h1 class="header-logo">
 			<a href="#">
 				<img src="./img/header-logo.png" alt="ロゴ">
 			</a>
-			<!-- <span></span> -->
-		</h1>
+			<!-- <span class="subttl txtxs">サブタイトル</span> -->
+		</h1><!-- /header-logo -->
 
 		<nav class="header-nav">
 			<ul class="header-list">
@@ -37,7 +36,7 @@
 		</nav><!-- /header-nav -->
 
 		<button class="header-btn" type="button" aria-label="">
-			<p>Lorem ipsum dolor</p>
+			<p class="txtxs">Lorem ipsum dolor</p>
 		</button><!-- /header-btn -->
 
 	</div><!-- /inner -->
@@ -69,6 +68,7 @@
 
 <div class="mv">
 	<div class="inner">
+		<p class="catchcopy txtl">キャッチコピー</p>
 
 		<div class="main-slider">
 			<a href="#">
@@ -79,48 +79,58 @@
 				<img class="slider-img pc" src="./img/slider-item02" alt="slide02">
 				<img class="slider-img sp" src="./img/slider-item02-sp" alt="slide02-sp">
 			</a>
-		</div><!-- /mv-slider-->
+		</div><!-- /main-slider-->
 
 	</div><!-- /inner -->
 </div><!-- /mv -->
 
-<!-- <div class="dropdown">
-	<p class="dropdown-ttl">MENU1</p>
-	<ul class="dropdown-list">
+
+<div class="drop inner"> <!-- 実際に使う際はinnerを消して-->
+	<p class="drop-ttl">MENU1</p>
+	<ul class="drop-conts">
 		<li><a href="">Child1</a></li>
 		<li><a href="">Child2</a></li>
 		<li><a href="">Child3</a></li>
 	</ul>
-</div> -->
-<!-- /dropdown -->
+</div> <!-- /drop -->
 
-<!-- <div class="float">
+
+<div class="float">
 	<a href="#"></a>
 
-	<button class="toTop" type="button" aria-label="Back to top"></button>
-</div> -->
-<!-- /float -->
+	<button class="toTop" type="button" aria-label="Back to top">
+		<i class="fas fa-chevron-up arrow"></i>
+	</button>
+</div><!-- /float -->
+
+<form action="/" method="post" class="inner"> <!-- 実際に使う際はinnerを消して-->
+	<div class="form-outer"><input type="text" name="user_last_name" placeholder="姓"></div>
+	<div class="form-outer"><input type="text" name="user_first_name" placeholder="名"></div>
+	<div class="form-outer"><input type="email" name="user_email" placeholder="メールアドレス"></div>
+	<div class="form-outer"><textarea name="user_message" placeholder="質問などはこちら（空欄でもOK）"></textarea></div>
+	<div class="form-outer"><button type="submit" class="submit-btn">送信</button></div>
+</form>
 
 
 <div id="contents">
   <div class="inner">
 
     <main>
-			<section class="">
+			<section class="leading">
 				<div class="inner">
-					<h2 class="ttl"></h2>
+					<h2 class="ttll"></h2>
+					<p class="txt"></p>
+				</div>
+			</section>
+			<section class="aboutcompany">
+				<div class="inner">
+					<h2 class="ttll"></h2>
 					<p class="txt"></p>
 				</div>
 			</section>
 			<section class="">
 				<div class="inner">
-					<h2 class="ttl"></h2>
-					<p class="txt"></p>
-				</div>
-			</section>
-			<section class="">
-				<div class="inner">
-					<h2 class="ttl"></h2>
+					<h2 class="ttll"></h2>
 					<p class="txt"></p>
 				</div>
 			</section>
@@ -134,28 +144,27 @@
 </div><!-- /contents -->
 
 <footer class="gfooter">
-		<aside class="gfooter-contents">
-			<div class="f-menu inner">
-				<dl class="f-menu01">
-					<dt>
-					</dt>
-					<div class="f-grid-bx">
-						<dd></dd>
-						<dd></dd>
-						<dd></dd>
-					</div>
-				</dl>
-
-			</div>
-		</aside>
-
-		<div class="gfooter-bottom">
-			<div class="inner">
-				<!-- <div><img src="./img/f-logo.png" alt=""></div> -->
-				<p class="copy"><small>&copy;</small></p>
-				<!-- /copy -->
-			</div>
+	<aside class="gfooter-contents">
+		<div class="f-menu inner">
+			<dl class="f-menu01">
+				<dt>
+				</dt>
+				<div class="f-grid-bx">
+					<dd></dd>
+					<dd></dd>
+					<dd></dd>
+				</div>
+			</dl>
 		</div>
+	</aside><!-- /gfooter-contents -->
+
+	<div class="gfooter-bottom">
+		<div class="inner">
+			<!-- <div><img src="./img/f-logo.png" alt=""></div> -->
+			<p class="copy"><small>&copy;</small></p>
+			<!-- /copy -->
+		</div>
+	</div><!-- /gfooter-bottom -->
 </footer><!-- /footer -->
 
 

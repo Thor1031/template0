@@ -1,0 +1,18 @@
+// margin: 0 auto;の水平中央
+@mixin centering-box($width, $width_sp: 90%) {
+	margin: {
+		left: auto;
+		right: auto;
+	}
+	width: $width;
+
+	@include mq('sp') {
+		width: $width_sp;
+	}
+}
+
+// 改行せず, 1行の垂直中央
+@mixin centering-oneline($height) {
+	height: $height;
+	line-height: $height;
+}

@@ -1,8 +1,8 @@
 // ドロワーアイコン
-$drawer-max-width: 90%;
-$drawer-width: 250px;
-$drawer-height: 100%;
-$drawer-bc: #fff;
+$maxwidth-drawer: 90%;
+$width-drawer: 250px;
+$height-drawer: 100%;
+$bc-drawer: #fff;
 $drawer-speed: 0.5s;
 $drawer-icon-width: 60px;
 $drawer-icon-height: 60px;
@@ -10,11 +10,11 @@ $bar-width: 28px;
 $bar-height: 4px;
 $bar-radius: 3px;
 $bar-space: 4px;
-$bar-bg: $cr-m;
-$bar-color: #fff;
+$bc-toggle-btn: #da6b64;
+$c-toggle-btn: #fff;
 
 $drawer-ttl-fsize: 1em;
-$nav-fsize: 16px;
+$fz-nav: 16px;
 $nav-span-fsize: 14px;
 $nav-a-pd: 16px;
 $nav-bt-c: #ddd;
@@ -25,7 +25,6 @@ $nav-bt-c: #ddd;
 	z-index: map-get($layer, "drawer");
 	display: none;
 	right: 0;
-
 
 	@include mq("tab-head") {
 		display: block;
@@ -48,8 +47,9 @@ $nav-bt-c: #ddd;
 	position: relative;
 	transition: $drawer-speed ease-in-out;
 	cursor: pointer;
-	background: $bar-bg;
+	background: $bc-toggle-btn;
 	z-index: map-get($layer, "drawer") + 1;
+	border: none;
 
 	span {
 		position: absolute;
@@ -59,7 +59,7 @@ $nav-bt-c: #ddd;
 		height: $bar-height;
 		width: $bar-width;
 		margin: (-$bar-height/2) 0 0 (-$bar-width/2);
-		background: $bar-color;
+		background: $c-toggle-btn;
 		border-radius: $bar-radius;
 		transition: $drawer-speed ease-in-out;
 
@@ -69,7 +69,7 @@ $nav-bt-c: #ddd;
 			width: 100%;
 			height: 100%;
 			border-radius: $bar-radius;
-			background: $bar-color;
+			background: $c-toggle-btn;
 			display: block;
 			content: "";
 			cursor: pointer;
@@ -94,7 +94,7 @@ $nav-bt-c: #ddd;
 	&.m_checked {
 
 		span {
-			background: rgba($bar-color, 0);
+			background: rgba($c-toggle-btn, 0);
 
 			&::before,
 			&::after {
@@ -107,7 +107,7 @@ $nav-bt-c: #ddd;
 				width: $bar-width;
 				height: $bar-height;
 				margin: (-$bar-height/2) 0 0 (-$bar-width/2);
-				background: $bar-color;
+				background: $c-toggle-btn;
 			}
 
 			&::before {
@@ -145,10 +145,10 @@ $nav-bt-c: #ddd;
 	top: 0;
 	right: 0;
 	z-index: map-get($layer, "drawer");
-	width: $drawer-width;
-	max-width: $drawer-max-width;
-	height: $drawer-height;
-	background: $drawer-bc;
+	width: $width-drawer;
+	max-width: $maxwidth-drawer;
+	height: $height-drawer;
+	background: $bc-drawer;
 	transition: $drawer-speed ease-in-out;
 	padding-top: $header-height-sp;
 	transform: translateX(105%);
@@ -180,14 +180,14 @@ $nav-bt-c: #ddd;
 			color: $cr-txt;
 			display: block;
 			padding: $nav-a-pd;
-			font-size: $nav-fsize;
+			font-size: $fz-nav;
 			border-left: 6px solid transparent;
 
-			span {
-				font-size: $nav-span-fsize;
-				color: $cr-m;
-				margin-left: 12px;
-			}
+			// span {
+			// 	font-size: $nav-span-fsize;
+			// 	color: $cr-m;
+			// 	margin-left: 12px;
+			// }
 		}
 	}
 }

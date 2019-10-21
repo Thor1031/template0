@@ -1,0 +1,127 @@
+.brsp {
+  display: none;
+  @include mq("sp") {
+  display: block;
+  }
+}
+
+.txtxs {
+  font: {
+    size: 14px;
+    weight: 300;
+  }
+  letter-spacing: 0;
+
+  @include mq('tab') {
+    font: {
+      size: 12px;
+      weight: 300;
+    }
+    letter-spacing: 0;
+  }
+  @include mq('sp') {
+    font: {
+      size: 10px;
+      weight: 300;
+    }
+    letter-spacing: 0;
+  }
+}
+
+.txts {
+  font: {
+    size: 16px;
+    weight: 600;
+  }
+
+  @include mq('tab') {
+    font: {
+      size: 14px;
+      weight: 600;
+    }
+  }
+  @include mq('sp') {
+    font: {
+      size: 12px;
+      weight: 600;
+    }
+  }
+}
+
+%txtm-base {
+  font: {
+    size: 20px;
+    weight: 600;
+  }
+
+  @include mq('tab') {
+    font: {
+      size: 16px;
+      weight: 600;
+    }
+  }
+  @include mq('sp') {
+    font: {
+      size: 15px;
+      weight: 600;
+    }
+  }
+}
+
+.txtm {
+  @extend %txtm-base;
+}
+
+.ttlm {
+  @extend %txtm-base;
+  margin: {
+    top: 12px;
+    bottom: 10px;
+  }
+
+  @include mq('sp') {
+    margin: {
+      top: 10px;
+      bottom: 8px;
+    }
+  }
+}
+
+%txtl-base {
+  font: {
+    size: 28px;
+    weight: 600;
+  }
+
+  @include mq('tab') {
+    font: {
+      size: 24px;
+      weight: 600;
+    }
+  }
+
+  @include mq('sp') {
+    font: {
+      size: 18px;
+      weight: 600;
+    }
+  }
+}
+
+.txtl {
+  @extend %txtl-base;
+}
+
+.ttll {
+  @extend %txtl-base;
+  margin-bottom: 48px;
+
+  @include mq('sp') {
+    margin-bottom: 40px;
+  }
+}
+
+// spanのclassとして使う
+.underline {
+  background: linear-gradient(transparent 70%, #ebb94d 70%);
+}

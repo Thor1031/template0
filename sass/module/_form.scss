@@ -1,0 +1,35 @@
+$bc-submit-btn: #da6b64;
+
+.form-outer {
+  @include centering-box(
+    $width: 80%,
+    $width_sp: 100%
+  );
+  margin-bottom: 30px;
+
+  %form-base {
+    border-radius: 8px;
+    border: none;
+    padding: 10px;
+  }
+
+  input {
+    @extend %form-base;
+    height: 55px;
+  }
+
+  textarea {
+    @extend %form-base;
+    height: 100px;
+  }
+}
+
+.submit-btn {
+  background-color: $bc-submit-btn;
+  width: 100%;
+  border-radius: 50px;
+  height: 55px;
+  font-size: 23px;
+  font-weight: bold;
+  letter-spacing: 10px;
+}
