@@ -444,7 +444,8 @@ select:focus {
 }
 
 .drawer-toggler {
-	background: #efa336;
+	background: #da6b64;
+	border: none;
 	cursor: pointer;
 	display: inline-block;
 	height: 60px;
@@ -574,12 +575,6 @@ select:focus {
 	font-size: 16px;
 	padding: 16px;
 	text-decoration: none;
-}
-
-.drawer-nav li a span {
-	color: #efa336;
-	font-size: 14px;
-	margin-left: 12px;
 }
 
 .dropdown {
