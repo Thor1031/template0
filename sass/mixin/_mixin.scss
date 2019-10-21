@@ -47,3 +47,10 @@
 		}
 	}
 }
+
+@mixin basebox($pt: 50px, $pb: 50px) {
+	padding: {
+		top: $pt;
+		bottom: $pb;
+	}
+}

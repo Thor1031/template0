@@ -1,29 +1,63 @@
 .txtxs {
-  font-size: 14px;
-  font-weight: 300;
+  font: {
+    size: 14px;
+    weight: 300;
+  }
+  letter-spacing: 0;
 
   @include mq('tab') {
-    font-size: 12px;
-    font-weight: 300;
+    font: {
+      size: 12px;
+      weight: 300;
+    }
     letter-spacing: 0;
   }
   @include mq('sp') {
-    font-size: 10px;
-    font-weight: 300;
+    font: {
+      size: 10px;
+      weight: 300;
+    }
     letter-spacing: 0;
   }
 }
 
 .txts {
-  font-size: 16px;
-  font-weight: 600;
+  font: {
+    size: 16px;
+    weight: 600;
+  }
 
   @include mq('tab') {
-    font-size: 14px;
-    font-weight: 600;
+    font: {
+      size: 14px;
+      weight: 600;
+    }
   }
   @include mq('sp') {
-    font-size: 12px;
-    font-weight: 600;
+    font: {
+      size: 12px;
+      weight: 600;
+    }
+  }
+}
+
+.txtl {
+  font: {
+    size: 28px;
+    weight: 600;
+  }
+
+  @include mq('tab') {
+    font: {
+      size: 24px;
+      weight: 600;
+    }
+  }
+
+  @include mq('sp') {
+    font: {
+      size: 18px;
+      weight: 600;
+    }
   }
 }
