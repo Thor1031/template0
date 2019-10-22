@@ -4,6 +4,12 @@
   display: block;
   }
 }
+.brpc {
+  display: none;
+  @include mq("pc") {
+  display: block;
+  }
+}
 
 .txtxs {
   font: {
@@ -70,6 +76,14 @@
 
 .txtm {
   @extend %txtm-base;
+
+  // > p {
+  //   margin-bottom: 2.4rem;
+
+  //   @include mq('sp') {
+  //     margin-bottom: 3rem;
+  //   }
+  // }
 }
 
 .ttlm {

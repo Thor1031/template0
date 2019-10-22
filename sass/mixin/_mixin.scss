@@ -48,9 +48,22 @@
 	}
 }
 
-@mixin basebox($pt: 50px, $pb: 50px) {
+@mixin basebox($height: null, $pt: 40px, $pb: 40px, $pt_sp: $pt, $pb_sp: $pb) {
 	padding: {
 		top: $pt;
 		bottom: $pb;
+		// top: if($pt == null, 0, $pt);
+		// bottom: if($pb == null, 0, $pb);
+	}
+	@if $height != null {
+		height: $height
+	}
+	// height: if($height == null, initial, $height);
+
+	@if $pt_sp != $pt or $pb_sp != $pb {
+		@include mq('sp') {
+			top: $pt_sp;
+			bottom: $pb_sp;
+		}
 	}
 }

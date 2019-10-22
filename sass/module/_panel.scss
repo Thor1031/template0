@@ -1,14 +1,15 @@
 
-$bc-drop: #ddd;
+$bc-panel: #ddd;
 
-.drop {
+.panel {
   position: relative;
-  background-color: $bc-drop;
+  background-color: $bc-panel;
 }
 
-.drop-ttl {
+.panel-heading {
   padding: 10px 15px;
   display: block;
+  cursor: pointer;
 
   &::after {
     border-bottom: 3px solid #000;
@@ -30,13 +31,18 @@ $bc-drop: #ddd;
   }
 }
 
-.drop-conts {
+.panel-collapse {
   width: 100%;
   display: none;
   text-align: left;
+
+  li a {
+    display: block;
+    width: 100%;
+  }
 }
 
-// .drop-conts {
+// .panel-collapse {
 //   position: absolute;
 //   top: 40px;
 //   width: 100%;

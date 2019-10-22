@@ -1,3 +1,8 @@
+// DOMを全て読み込んでから処理する
+// jQuery(function () {
+
+// });
+
 var speed_toTop = 1000; // ms
 
 jQuery('.drawer-item a').on('click', function () {
@@ -8,9 +13,6 @@ jQuery('.drawer-toggler, .drawer-close').on('click', function () {
   jQuery('.drawer-toggler').toggleClass('m_checked');
   jQuery('.drawer-close').toggleClass('m_checked');
   jQuery('.drawer-contents').toggleClass('m_checked');
-  jQuery(".drawer-toggler").attr("aria-expanded", function (i, attr) {
-    return attr == 'true' ? 'false' : 'true'
-  });
 });
 
 // ********** toTop button
@@ -29,26 +31,41 @@ var scene = new ScrollMagic.Scene({
   .addTo(controller);
 
 
-// ********** dropdown
-jQuery(".drop-ttl").on("click", function () {
-  if (jQuery(this).hasClass("expanded")) {
-    jQuery(this).removeClass("expanded");
-    jQuery(this).next(".drop-conts").slideUp();
+// ********** panel
+jQuery(".panel-heading").on("click", function () {
+  var $toggle = jQuery(this);
+  var target = jQuery(this).data("target");
+  if ($toggle.hasClass("expanded")) {
+    $toggle.removeClass("expanded");
+    jQuery('#' + target).slideUp();
   } else {
-    jQuery(".drop-ttl").removeClass("expanded");
-    jQuery(".drop-conts").slideUp();
-    jQuery(this).next(".drop-conts").slideToggle();
-    jQuery(this).toggleClass("expanded");
+    jQuery(".panel-heading").removeClass("expanded");
+    jQuery(".panel-collapse").slideUp();
+    jQuery('#' + target).slideToggle();
+    $toggle.toggleClass("expanded");
   }
   return false;
 });
 
-// *********** ページ内リンク
-jQuery(".").on("click", function () {
-  var contactPadding = 40;
-  var targetTop = jQuery("#").offset().top;
-  jQuery("html,body").animate({
-    scrollTop: targetTop - contactPadding
-  }, 500);
-  return false;
+// *********** data-toggle="collapse"をもつ要素にaria-expanded属性を加える
+jQuery("[data-toggle='collapse']").on("click", function () {
+  jQuery(this).attr("aria-expanded", function (i, attr) {
+    return attr == 'true' ? 'false' : 'true';
+  });
 });
+
+
+//　********* aria属性追加
+jQuery("i").attr("aria-hidden", "true"); // fontawesome icon
+jQuery("[data-toggle='collapse']").attr("aria-expanded", "false");
+
+
+// *********** ページ内リンク　使わないならコメントアウト
+// jQuery(".").on("click", function () {
+//   var contactPadding = 40;
+//   var targetTop = jQuery("#").offset().top;
+//   jQuery("html,body").animate({
+//     scrollTop: targetTop - contactPadding
+//   }, 500);
+//   return false;
+// });
