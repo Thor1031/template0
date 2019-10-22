@@ -121,8 +121,10 @@ a {
 img {
 	border: none;
 	height: auto;
+	max-height: 100%;
 	max-width: 100%;
 	vertical-align: top;
+	width: auto;
 }
 
 video {
@@ -407,6 +409,10 @@ select:focus {
 	width: 820px;
 }
 
+.colortxt {
+	color: #000;
+}
+
 .drawer {
 	display: none;
 	position: fixed;
@@ -553,40 +559,6 @@ select:focus {
 	text-decoration: none;
 }
 
-.drop {
-	background-color: #ddd;
-	position: relative;
-}
-
-.drop-ttl {
-	display: block;
-	padding: 10px 15px;
-}
-
-.drop-ttl::after {
-	border-bottom: 3px solid #000;
-	border-right: 3px solid #000;
-	content: '';
-	display: inline-block;
-	height: 12px;
-	margin: 6px 0;
-	position: absolute;
-	right: 20px;
-	transform: rotate(45deg);
-	width: 12px;
-	z-index: 2;
-}
-
-.drop-ttl.expanded::after {
-	transform: rotate(-135deg);
-}
-
-.drop-conts {
-	display: none;
-	text-align: left;
-	width: 100%;
-}
-
 .float {
 	background-color: #ececec;
 	bottom: 1rem;
@@ -709,7 +681,51 @@ button.toTop i.fa-chevron-up {
 	opacity: 0.6;
 }
 
+.panel {
+	background-color: #ddd;
+	position: relative;
+}
+
+.panel-heading {
+	cursor: pointer;
+	display: block;
+	padding: 10px 15px;
+}
+
+.panel-heading::after {
+	border-bottom: 3px solid #000;
+	border-right: 3px solid #000;
+	content: '';
+	display: inline-block;
+	height: 12px;
+	margin: 6px 0;
+	position: absolute;
+	right: 20px;
+	transform: rotate(45deg);
+	width: 12px;
+	z-index: 2;
+}
+
+.panel-heading.expanded::after {
+	transform: rotate(-135deg);
+}
+
+.panel-collapse {
+	display: none;
+	text-align: left;
+	width: 100%;
+}
+
+.panel-collapse li a {
+	display: block;
+	width: 100%;
+}
+
 .brsp {
+	display: none;
+}
+
+.brpc {
 	display: none;
 }
 
@@ -875,14 +891,15 @@ button.header-btn {
 	background-color: #da6b64;
 	border: none;
 	color: #fff;
+	cursor: pointer;
 	padding: 11px 40px;
 }
 
 .mv {
 	height: 500px;
 	margin-top: 80px;
-	padding-bottom: 50px;
-	padding-top: 50px;
+	padding-bottom: 40px;
+	padding-top: 40px;
 }
 
 .mv > .inner {
@@ -895,6 +912,14 @@ button.header-btn {
 
 .slider-img.sp {
 	display: none;
+}
+
+@media screen and (min-width: 820px) {
+
+.brpc {
+	display: block;
+}
+
 }
 
 @media screen and (max-width: 1285px) {

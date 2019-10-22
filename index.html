@@ -44,7 +44,7 @@
 
 
 <div class="drawer">
-	<button class="drawer-toggler" type="button" aria-expanded="false" aria-controls="GDrawerCont"
+	<button class="drawer-toggler" type="button" data-toggle="collapse" aria-controls="GDrawerCont"
 	aria-label="Global navigation toggle button">
 		<span></span>
 	</button>
@@ -84,16 +84,22 @@
 	</div><!-- /inner -->
 </div><!-- /mv -->
 
-
-<div class="drop inner"> <!-- 実際に使う際はinnerを消して-->
-	<p class="drop-ttl">MENU1</p>
-	<ul class="drop-conts">
-		<li><a href="">Child1</a></li>
-		<li><a href="">Child2</a></li>
-		<li><a href="">Child3</a></li>
-	</ul>
-</div> <!-- /drop -->
-
+<ul class="panel-group inner">  <!-- 実際に使う際はinnerを消して-->
+	<li class="panel"><p><a class="panel-heading" data-toggle="collapse" data-target="panel01">MENU1</a></p>
+		<ul id="panel01" class="panel-collapse">
+			<li><a href="#panel01">Child1</a></li>
+			<li><a href="#panel01">Child2</a></li>
+			<li><a href="#panel01">Child3</a></li>
+		</ul>
+	</li> <!-- /panel -->
+	<li class="panel"><p><a class="panel-heading" data-toggle="collapse" data-target="panel02">MENU2</a></p>
+		<ul id="panel02" class="panel-collapse">
+			<li><a href="#panel02">Child1</a></li>
+			<li><a href="#panel02">Child2</a></li>
+			<li><a href="#panel02">Child3</a></li>
+		</ul>
+	</li> <!-- /panel -->
+</ul>
 
 <div class="float">
 	<a href="#"></a>
@@ -104,12 +110,12 @@
 </div><!-- /float -->
 
 <form action="/" method="post" class="inner"> <!-- 実際に使う際はinnerを消して-->
-	<div class="form-outer"><input type="text" name="user_last_name" placeholder="姓"></div>
-	<div class="form-outer"><input type="text" name="user_first_name" placeholder="名"></div>
-	<div class="form-outer"><input type="email" name="user_email" placeholder="メールアドレス"></div>
-	<div class="form-outer"><textarea name="user_message" placeholder="質問などはこちら（空欄でもOK）"></textarea></div>
+	<div class="form-outer"><input type="text" name="user_last_name" value="" placeholder="姓"></div>
+	<div class="form-outer"><input type="text" name="user_first_name" value="" placeholder="名"></div>
+	<div class="form-outer"><input type="email" name="user_email" value="" placeholder="メールアドレス"></div>
+	<div class="form-outer"><textarea name="user_message" cols="90" rows="12" placeholder="質問などはこちら（空欄でもOK）"></textarea></div>
 	<div class="form-outer"><button type="submit" class="submit-btn">送信</button></div>
-</form>
+</form><!-- /form -->
 
 
 <div id="contents">
